@@ -4,31 +4,39 @@
 <head>
     <title>LOGIN</title>
 
-    <link rel="stylesheet" href="uikit/uikit-icons.js">
-    <link rel="stylesheet" href="uikit/uikit-icons.min.js">
-    <link rel="stylesheet" href="uikit/uikit-rtl.css">
-    <link rel="stylesheet" href="uikit/uikit-rtl.min.css">
-    <link rel="stylesheet" href="uikit/uikit.css">
-    <link rel="stylesheet" href="uikit/uikit.js">
-    <link rel="stylesheet" href="uikit/uikit.min.css">
-    <link rel="stylesheet" href="uikit/uikit.min.js">
-    <link rel="stylesheet" href="uikit/uikit.theme.css">
-    <link rel="stylesheet" href="jquery/chosen.css">
-    <link rel="stylesheet" href="jquery/chosen.jquery.js">
-    <link rel="stylesheet" href="jquery/jquery-3.4.1.js">
-    <link rel="stylesheet" href="jquery/jquery-3.4.1.min.js">
+    <title>REGISTER</title>
+    <link rel="stylesheet" href="./uikit/uikit.theme.css">
+    <link rel="stylesheet" href="./jquery/chosen.css">
+    <script src="./jquery/chosen.jquery.js"></script>
+    <script src="./jquery/jquery-3.4.1.js"></script>
+    <script src="./jquery/jquery-3.4.1.min.js"></script>
+    <script src="./uikit/uikit-icons.js"></script>
+    <script src="./uikit/uikit-icons.min.js"></script>
+    <script src="./uikit/uikit.js"></script>
+    <script src="./uikit/uikit.min.js"></script>
+    <link rel="stylesheet" href="./uikit/uikit-rtl.cs s">
+    <link rel="stylesheet" href="./uikit/uikit.css">
+    
+
+    <script src="javascript/nishkritih.js"></script>
+
+    <script src="javascript/nishkritih/page/n.page.login.js"></script>
 
 </head>
 
 <body>
     <div class="uk-card uk-card-default uk-padding uk-margin-xlarge-top uk-width-large uk-margin-auto">
-        <img src="./jquery/logo/Nishkritih_logo.png" class="uk-width-1-4 uk-align-center" alt="Nishkritih.com">
+        <img src="./image/logo/Nishkritih_logo.png" class="uk-width-1-4 uk-align-center" alt="Nishkritih.com">
         <div>
             <div class="uk-text-left">Email or Username:</div>
-            <input id=uname type="text" placeholder="Enter Username Or Email" name="uname" class="uk-input uk-margin-bottom">
+            <input id=uname type="text" placeholder="Enter Username Or Email" name="uname" class="uk-input">
             <br>
-            <div class="uk-text-left">Email:</div>
-            <input id="rpassword" type="password" placeholder="Enter Password" name="psw" class="uk-input uk-margin-bottom">
+            <label id="Remail"  class="uk-text-danger uk-text-bolder"></label>
+            <br>
+            <div class="uk-text-left">Password:</div>
+            <input id="rpassword" type="password" placeholder="Enter Password" name="psw" class="uk-input">
+            <br>
+            <span id="Rpassword"  class="uk-text-danger uk-text-bolder"></span>
             <br>
             <div class="uk-flex uk-flex-between uk-margin-bottom">
                 <a id="btnSignUp" class="uk-button uk-width-small uk-button-secondary">SIGN UP</a>
