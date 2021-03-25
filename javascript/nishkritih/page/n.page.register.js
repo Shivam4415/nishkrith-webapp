@@ -89,6 +89,10 @@ N.Page.Register = (function () {
     }
   }
 
+  const btnnSignup=function(email,password,phone,address,dob){
+
+  }
+
   return {
     init: _init,
   };

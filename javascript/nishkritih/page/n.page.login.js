@@ -1,46 +1,82 @@
 N.Page.Login = (function () {
+
+  const apiUrl = 'localhost:5000';
   function _init() {
     $("#btnSignUp").on("click", btnSignup);
     $("#btnSignIn").on("click", btnSignin);
   }
 
-  function btnSignup() {}
+  function btnSignup() {
+
+  }
 
   function btnSignin() {
     const remail = document.getElementById("uname").value;
     const rpassword = document.getElementById("rpassword").value;
 
-    if (remail == "") 
-    {
+    if (remail == "") {
       document.getElementById("Remail").innerHTML = "*email must be filled ";
     }
-     else
-    {
+    else {
       var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-      if (!remail.match(mailformat)) 
-      {
-        document.getElementById("Remail").innerHTML ="entered an invalid email! ";
+      if (!remail.match(mailformat)) {
+        document.getElementById("Remail").innerHTML = "entered an invalid email! ";
         return false;
-      } 
-      else 
-      {
+      }
+      else {
         document.getElementById("Remail").innerHTML = "";
       }
     };
-    if (rpassword.length < 6)
-     {
-      document.getElementById("Rpassword").innerHTML =
-        "password must be atleast 6 char";
+
+    var minNumberofChars = 6;
+    var maxNumberofChars = 16;
+    var regularExpression = /^[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+    if (rpassword.length < minNumberofChars || rpassword.length > maxNumberofChars) {
+      document.getElementById("Rpassword").innerHTML = "password must be atleast 6 char";
       return false;
     }
-    var passformat = /(?=.*\d)(?=.*[A-Z])(?=.*[a-z]).[8,]/;
-    if (rpassword.match(passformat)) {
+    else {
       document.getElementById("Rpassword").innerHTML = "";
-    } else {
+
+    }
+    validateLogin(remail, rpassword).done(function () {
+      // set cookies header;
+
+    });
+    if (regularExpression.test(rpassword)) {
       document.getElementById("Rpassword").innerHTML =
         "password combination wrong";
+      return false;
     }
-  }
+    else {
+      document.getElementById("Rpassword").innerHTML = "";
+    }
+  };
+
+
+  function validateLogin(userEmail, password) {
+    var defer = $.Deferred();
+    $.ajax({
+      url: "",
+      method: 'POST',
+      dataType: 'json',
+      success: function (res, xhr) {
+        defer.resolve(res);
+      },
+      fail: function (error, xhr) {
+        defer.reject(error);
+      }
+    });
+    // validateLogin(remail, rpassword).done(function () {
+    //   // set cookies header;
+
+    // });
+
+    return defer.promise();
+  };
+
+
+
 
   return {
     init: _init,
