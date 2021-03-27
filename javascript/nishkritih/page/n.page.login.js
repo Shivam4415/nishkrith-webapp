@@ -11,6 +11,7 @@ N.Page.Login = (function () {
   }
 
   function btnSignin() {
+    //ToDo:use Jquery
     const remail = document.getElementById("uname").value;
     const rpassword = document.getElementById("rpassword").value;
 
