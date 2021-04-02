@@ -15,7 +15,7 @@ N.Page.Login = (function () {
     const remail = document.getElementById("uname").value;
     const rpassword = document.getElementById("rpassword").value;
 
-    if (remail == "") {
+    if (!remail) {
       document.getElementById("Remail").innerHTML = "*email must be filled ";
     }
     else {
