@@ -1,6 +1,6 @@
 N.Page.Login = (function () {
 
-  const apiUrl = 'localhost:5000';
+  const apiUrl = 'http://localhost:5000';
   function _init() {
     $("#btnSignUp").on("click", btnSignup);
     $("#btnSignIn").on("click", btnSignin);
@@ -55,11 +55,12 @@ N.Page.Login = (function () {
   };
 
 
-  function validateLogin(userEmail, password) {
+  function validateLogin(userEmail, userPassword) {
     var defer = $.Deferred();
     $.ajax({
-      url: "",
+      url: apiUrl+"/login",
       method: 'POST',
+      data:{email: userEmail, password:userPassword},
       dataType: 'json',
       success: function (res, xhr) {
         defer.resolve(res);
@@ -70,7 +71,6 @@ N.Page.Login = (function () {
     });
     // validateLogin(remail, rpassword).done(function () {
     //   // set cookies header;
-
     // });
 
     return defer.promise();
