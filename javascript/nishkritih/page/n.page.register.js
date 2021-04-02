@@ -5,6 +5,7 @@ N.Page.Register = (function () {
     $("#submit").on("click", btnsubmit);
   }
   function btnsubmit() {
+    //ToDo: use jquery
     const lname = document.getElementById("name").value;
     const dateofbirth = document.getElementById("dob").value;
     const rgender = document.getElementById("gender").value;
@@ -14,7 +15,7 @@ N.Page.Register = (function () {
     const rpassword = document.getElementById("password").value;
     const rconfirmpassword = document.getElementById("repass").value;
 
-    if (lname == "") {
+    if (!lname) {
       document.getElementById("Rname").innerHTML = "*name must be filled ";
       return false;
     }
@@ -26,9 +27,10 @@ N.Page.Register = (function () {
       document.getElementById("Rname").innerHTML = "";
     }
 
-    if (dateofbirth == "") {
-      document.getElementById("Rdob").innerHTML = "*DOB must be filled ";
-      return false;
+    if(!dateofbirth)
+    {
+        document.getElementById("Rdob").innerHTML = "*DOB must be filled ";
+        return false;
     }
     else {
       document.getElementById("Rdob").innerHTML = "";
