@@ -6,11 +6,13 @@ const router = require("./route/router");
 
 // Static Files
 // app.use(express.static("img"));
-// app.use(express.static("uikit"));
+
 // app.use(express.static("javascript/nishkritih"));
 // app.use(express.static("javascript"));
 
+
 app.use(express.static("jquery"));
+app.use(express.static("uikit"));
 // Load Image
 // app.use("/img", express.static(__dirname + "img/logo"));
 app.use(express.static("img"));
