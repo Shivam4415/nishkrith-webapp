@@ -7488,6 +7488,43 @@ svg .uk-text-muted, svg.uk-text-muted {
     margin-right: 40px !important
 }
 
+
+
+
+.uk-btn{
+    /* display: inline-block; */
+padding: 10px 30px;
+font-weight: bolder;
+text-decoration: none;
+text-transform: uppercase;
+border-radius: 200px;
+transition: background-color 0.2s,border 0.2s,color 0.2s;
+} 
+
+.uk-btn-full{
+    background-color: rgb(209, 93, 15);
+color: #f2f0f3;
+margin-right: 15px;
+border: 1px solid rgb(230, 230, 238);
+}
+ 
+.uk-btn-ful{
+    background-color: rgb(126, 102, 231);
+color: #e7f5eb;
+margin-right: 15px;
+border: 1px solid rgb(236, 233, 247);
+}
+
+.uk-btn-full:hover{
+    background-color: #e2eea0;
+}
+
+.uk-btn-ful:hover{
+background-color: #edfc9d;
+} 
+
+
+
 @media (min-width: 1200px) {
     .uk-margin-large {
         margin-bottom: 70px
