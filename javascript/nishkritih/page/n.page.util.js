@@ -10,7 +10,7 @@ N.Page.Util=new function(){
                    '<p></p>'+
                    '</a>'
         }
-       return '<a class="uk-padding-remove" name="'+id+'">'+
+       return '<a class="uk-padding-remove " name="'+id+'">'+
             '<div class="uk-card uk-card-default uk-card-body uk-margin-left uk-card-small uk-width-small@s">'+
                 '<img src="'+imgUrl+'" class="">'+
             '</div>'+
