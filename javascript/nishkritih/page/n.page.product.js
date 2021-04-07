@@ -15,7 +15,6 @@ N.Page.Product=new function(){
         // _products(function(){
             var _cardHtml=N.Page.Util.getCard(_products.Id,_products.Name,_products.ImageUrl);
             _grid.append(_cardHtml);
-            $(_containerIds.Brand).removeClass("uk-hidden");
 
             $(_parentContainerId).on('click','[name="'+_products.Id+'"]',function(){
 
