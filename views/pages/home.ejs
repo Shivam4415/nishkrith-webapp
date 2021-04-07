@@ -19,7 +19,7 @@
     <script src="n.page.brand.js"></script>
     <script src="n.page.util.js"></script>
     <script src="n.page.home.js"></script>
-        <%-  include('../partials/login.html') -%>
+    <%-  include('../partials/loginModal.html') -%>
     <%-  include('../partials/Register.html') -%>
     
     <title></title>
@@ -140,11 +140,10 @@
                 </li>
             </ul>
             <div class="uk-flex uk-flex-between">
-                <a id="btnSignUp" class="uk-button uk-width-small uk-button-secondary uk-margin-right" href="#signup_modal" uk-toggle>SIGN UP</a>
-                <a id="btnSignIn" class="uk-button uk-width-small uk-button-primary" name="Login" href="#modal-login"
-                    uk-toggle>Login</a>
+                <a id="btnHomePageSignUp" class="uk-button uk-width-small uk-button-secondary uk-margin-right">SIGN UP</a>
+                <a id="btnHomePageLogIn" class="uk-button uk-width-small uk-button-primary" name="Login"
+                    >Login</a>
             </div>
-            <!-- <div id="modal-example" uk-modal></div> -->
         </div>
     </nav>
     <div id="Navigation" uk-grid>

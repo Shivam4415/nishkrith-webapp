@@ -531,14 +531,6 @@ a.uk-link-reset,
   font-size: 2.6rem;
   line-height: 1.2;
 }
-.uk-span{
-  animation: DipakShaw 1s infinite;
-}
-@keyframes DipakShaw {
-  0%{color: #f50d0d;}
-50%{color: rgb(235, 14, 14);}
-100%{color: rgb(114, 143, 170);}
-}
 .uk-heading-medium {
   font-size: 2.8875rem;
   line-height: 1.1;
