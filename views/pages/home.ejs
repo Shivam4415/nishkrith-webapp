@@ -19,17 +19,19 @@
     <script src="n.page.brand.js"></script>
     <script src="n.page.util.js"></script>
     <script src="n.page.home.js"></script>
+    <%-  include('../partials/loginModal.html') -%>
+    <%-  include('../partials/registerModal.html') -%>
     
     <title></title>
 </head>
 
 <body class="uk-overflow-auto">
-    <nav class="uk-navbar-container uk-margin" uk-navbar="mode: click">
+    <nav class="uk-navbar-container" uk-navbar="mode: hover">
         <div class="uk-navbar-left">
 
-            <img class="uk-navbar-item uk-logo" src="image/logo/Nishkritih_logo.png"></img>
+            <img class="uk-width-1-2" src="/logo/Nishkritih_logo.png"></img>
         </div>
-        <div class="uk-navbar-left">
+        <div class="uk-navbar-item">
             <ul class="uk-navbar-nav">
                 <li id="mobileRepair">
                     <a href="#">
@@ -56,26 +58,51 @@
                                 <ul class="uk-nav uk-navbar-dropdown-nav">
                                     <li>TopBrands
                                         <div uk-grid class="uk-grid">
-                                            <a class="uk-card uk-card-small uk-card-default uk-card-body uk-width-1-5@m uk-padding-remove uk-margin-small-right uk-margin-left">
-                                                <img  src="https://s3n.cashify.in/cashify/brand/img/xhdpi/1071214e-b44f.jpg">
+                                            <a class="uk-card uk-card-small uk-card-default uk-card-body uk-width-1-5@m uk-padding-remove uk-margin-small-right uk-margin-left ">
+                                                <img  src="/logo/apple.jpg">
                                                 
                                             </a>
                                                <a class="uk-card uk-card-small uk-card-default uk-card-body uk-width-1-5@m uk-padding-remove uk-margin-small-right">
-                                                <img  src="https://s3n.cashify.in/cashify/brand/img/xhdpi/1071214e-b44f.jpg">
+                                                <img  src="/logo/asus.jpg">
                                                 
                                                </a>
                                                <a class="uk-card uk-card-small uk-card-default uk-card-body uk-width-1-5@m uk-padding-remove uk-margin-small-right">
-                                                <img  src="https://s3n.cashify.in/cashify/brand/img/xhdpi/1071214e-b44f.jpg">
+                                                <img  src="/logo/honor.jpg">
                                                 
                                                </a>
                                                <a class="uk-card uk-card-small uk-card-default uk-card-body uk-width-1-5@m uk-padding-remove uk-margin-left uk-margin-small-right">
-                                                <img  src="https://s3n.cashify.in/cashify/brand/img/xhdpi/1071214e-b44f.jpg">
+                                                <img  src="/logo/mi.jpg">
                                                 
                                                </a>
-                                               <a class="uk-card uk-card-small uk-card-default uk-card-body uk-width-1-5@m uk-padding-remove">
-                                                <img  src="https://s3n.cashify.in/cashify/brand/img/xhdpi/1071214e-b44f.jpg">
+                                               <a class="uk-card uk-card-small uk-card-default uk-card-body uk-width-1-5@m uk-padding-remove uk-margin-small-right">
+                                                <img  src="/logo/vivo.jpg">
                                                 
                                                </a>
+                                               <a class="uk-card uk-card-small uk-card-default uk-card-body uk-width-1-5@m uk-padding-remove uk-margin-small-right">
+                                                <img  src="/logo/sony.jpg">
+                                                
+                                               </a>
+
+                                               <a class="uk-card uk-card-small uk-card-default uk-card-body uk-width-1-5@m uk-padding-remove uk-margin-left uk-margin-small-right">
+                                                <img  src="/logo/samsung.jpg">
+                                                
+                                               </a>
+
+                                               <a class="uk-card uk-card-small uk-card-default uk-card-body uk-width-1-5@m uk-padding-remove uk-margin-small-right">
+                                                <img  src="/logo/oneplus.jpg">
+                                                
+                                               </a>
+
+                                               <a class="uk-card uk-card-small uk-card-default uk-card-body uk-width-1-5@m uk-padding-remove uk-margin-small-right">
+                                                <img  src="/logo/nokia.jpg">
+                                                
+                                               </a>
+
+                                               <a class="uk-card uk-card-small uk-card-default uk-card-body uk-width-1-5@m uk-margin-left uk-padding-remove uk-margin-small-right">
+                                                <img  src="/logo/Motorola.jpg">
+                                                
+                                               </a>
+
                                         </div>
                                         
                                     <li>
@@ -101,7 +128,7 @@
                 </li>
                 <li>
                     <a href="#">
-                        <span class="uk-icon uk-margin-small-right" uk-icon="icon: star"></span>
+                        <span class="uk-icon k-margin-small-right" uk-icon="icon: star"></span>
                         Contact
                     </a>
                 </li>
@@ -113,145 +140,46 @@
                 </li>
             </ul>
             <div class="uk-flex uk-flex-between">
-                <a id="btnSignUp" class="uk-button uk-width-small uk-button-secondary uk-margin-right">SIGN UP</a>
-                <a id="btnSignIn" class="uk-button uk-width-small uk-button-primary" name="SignIn"
-                    uk-toggle="target: #modal-example">Login</a>
-                <a href="C:\Users\Shivam\Desktop\nishkrith_login\nishkritih-webapp\login.html" uk-toggle></a>
-
+                <a id="btnHomePageSignUp" class="uk-button uk-width-small uk-button-secondary uk-margin-right">SIGN UP</a>
+                <a id="btnHomePageLogIn" class="uk-button uk-width-small uk-button-primary" name="Login"
+                    >Login</a>
             </div>
         </div>
     </nav>
     <div id="Navigation" uk-grid>
         <a href='http://localhost:3000/home' class="uk-padding-remove-right">Home</a>
     </div>
-
-    <div id="Brand">
-        <h1>Select Brand</h1>
-        
-    </div>
-    <div id="Product" class="uk-hidden">
+    
+    <div id="Product" class="uk-hidden uk-margin-medium-left">
         <h1>Select Product</h1>
         
     </div>
-    <div id="Color" class="uk-hidden">
+    <div id="Color" class="uk-hidden uk-margin-medium-left">
         <h1>Select Color</h1>
         
-    </div>
-
-    <div class="uk-background-default uk-container-small uk-card-default">
+    </div> 
 
         <div class="">
-            <h2 class="">Top Selling Brands</h2>
+            <h2 class="uk-card-title uk-margin-remove-bottom">Top Selling Brands</h2>
         </div>
 
-        <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider>
-            <ul id="Top Selling Brandslist"
-                class="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@m uk-grid uk-flex"> -->
-
-
-                <li class="">
-                    <a title="Sell Old Apple" class="" href="#">
-                        <div class="uk-card">
-                            <img class="uk-width-1-2@s" alt="Apple" src="image/logo/apple_logo.png">
-                        </div>
-                    </a>
-                </li>
-                <li class="">
-                    <a title="Sell Old Realme" class="" href="#">
-                        <div class="uk-card"><img class="uk-width-1-2@ss" alt="Apple" src="image/logo/realme_png.png">
-                        </div>
-                    </a>
-                </li>
-
-                <li class="">
-                    <a title="Sell Old Asus" class="" href="#">
-                        <div class="uk-card"><img class="" alt="Apple" src="image/logo/asus.png">
-                        </div>
-                    </a>
-                </li>
-
-                <li class="">
-                    <a title="Sell Old Honor" class="" href="#">
-                        <div class="uk-card"><img class="" alt="Apple" src="image/logo/Honor-logo.png">
-                        </div>
-                    </a>
-                </li>
-
-                <li class="">
-                    <a title="Sell Old Nokia" class="" href="#">
-                        <div class="uk-card"><img class="" alt="Apple" src="image/logo/Nokia-Logo.png">
-                        </div>
-                    </a>
-                </li>
-
-                <li class="">
-                    <a title="Sell Old Lava" class="" href="#">
-                        <div class="uk-card"><img class="uk-width-1-2@s" alt="Apple" src="image/logo/lava_logo.png">
-                        </div>
-                    </a>
-                </li>
-
-                <li class="">
-                    <a title="Sell Old Mi" class="" href="#">
-                        <div class="uk-card"><img class="uk-width-1-2@s" alt="Apple" src="image/logo/micro.jpg"></div>
-                    </a>
-                </li>
-
-                <li class="">
-                    <a title="Sell Old Motorola" class="" href="#">
-                        <div class="uk-card"><img class="uk-width-1-2@s" alt="Apple" src="image/logo/motorola-logo.png">
-                        </div>
-                    </a>
-                </li>
-
-
-                <li class="">
-                    <a title="Sell Old One_plus" class="" href="#">
-                        <div class="uk-card"><img class="uk-width-1-2@s" alt="Apple" src="image/logo/one_plus.png">
-                        </div>
-                    </a>
-                </li>
-
-                <li class="">
-                    <a title="Sell Old Oppo" class="" href="#">
-                        <div class="uk-card"><img class="" alt="Apple" src="image/logo/Oppo-Logo.png">
-                        </div>
-                    </a>
-                </li>
-
-                <li class="">
-                    <a title="Sell Old Samsung" class="" href="#">
-                        <div class="uk-card"><img class="" alt="Apple" src="image/logo/samsung.png">
-                        </div>
-                    </a>
-                </li>
-
-                <li class="">
-                    <a title="Sell Old Vivo" class="" href="#">
-                        <div class="uk-card"><img class="" alt="Apple" src="image/logo/vivo_logo.png">
-                        </div>
-                    </a>
-                </li>
-            </ul>
-            <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous
-                uk-slider-item="previous"></a>
-            <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next
-                uk-slider-item="next"></a>
-
-        </div>
-    </div>
-
-    <div class="uk-card">
-        <div class="">
-            <div class="">
-                <h2 class="">How Cashify Works</h2>
+        <div>
+            <div class="uk-flex uk-flex-wrap ">
+                <div id="Brand" class="uk-margin-medium-left">
+                </div>
             </div>
         </div>
-        <ul class="">
-            <li class="">
-                <div class="">
+
+
+    <div class="uk-card-default uk-card uk-card-body">
+            <div class="">
+                <h2 class="uk-padding-remove-top">How Cashify Works</h2>
+            </div>
+        <ul class="uk-child-width-expand@s uk-text-center" uk-grid>
+            <li class="uk-width-1-4 uk-card-small uk-margin-large-left">
+                <div class="uk-card uk-card-body uk-padding-remove">
                     <i class="">
-                        <img class="uk-width-1-4@l" alt="Check Price" src="image/logo/price_check.jpg"></i>
+                        <img class="uk-width-1-3@m" alt="Check Price" src="/logo/price_check.png"></i>
                     <div class="">
                         <div class="">
                             <span
@@ -264,10 +192,10 @@
                     </div>
                 </div>
             </li>
-            <li class="">
-                <div class="">
+            <li class="uk-width-1-4 uk-card-small uk-margin-auto">
+                <div class="uk-card uk-card-body uk-padding-remove">
                     <i class="">
-                        <img class="uk-width-1-4@l" alt="Schedule Pickup" src="image/logo/lucy-quick-pick-up-logo.jpg">
+                        <img class="uk-width-3-5@m" alt="Schedule Pickup" src="/logo/pickup.png">
                     </i>
                     <div class="">
                         <div class="">
@@ -281,10 +209,10 @@
                     </div>
                 </div>
             </li>
-            <li class="">
-                <div class=""><i
-                        class=""><img class="uk-width-1-4@l" alt="Get Paid"
-                            src="image/logo/paid.jpg"></i>
+            <li class="uk-width-1-4 uk-card-small">
+                <div class="uk-card uk-card-body uk-padding-remove"><i
+                        class=""><img class="uk-width-1-3@m" alt="Get Paid"
+                            src="/logo/paid.png"></i>
                     <div class="">
                         <div class=""><span
                                 class="">3</span>
@@ -296,33 +224,20 @@
                 </div>
             </li>
         </ul>
-    
+    </div>
 
-
-
-
-
-
-
-
-    <div id="tm-bottom" class="tm-bottom uk-section-muted uk-section">
-        <div class="uk-container uk-container-expand">
-            <div class="uk-child-width-expand@m uk-flex-middle uk-grid uk-grid-stack" uk-grid="">
-                <div class="uk-width-1-1@m uk-first-column">
-                    <div class="uk-panel widget-custom-html" id="widget-custom_html-27">
-                        <div class="textwidget custom-html-widget">
-                            <div class="uk-grid-margin uk-flex-middle uk-grid" uk-grid="">
-                                <div class="uk-width-auto uk-first-column">
-                                    <div class="uk-margin-small">
-                                        <picture class="uk-width-1-2@s"><img src="image/logo/Nishkritih_logo.png"
+    <div id="tm-bottom" class="tm-bottom uk-section-muted">
+                            <div class="uk-grid-margin uk-flex-middle uk-grid" uk-grid>
+                                <div class="uk-width-1-5@m uk-first-column">
+                                    <div class="uk-margin-small"> 
+                                        <picture class="uk-width-1-2@s"><img src="/logo/Nishkritih_logo.png"
                                                 alt="Nishkritih Logo" class="uk-width-1-2" />
                                         </picture>
                                     </div>
                                     <div class="uk-panel"><br>
                                         Copyright <a style="color: #02171f;">Nishkritih Inc.</a><br>
                                         <div class="uk-margin-small">
-                                            <div class="uk-child-width-auto uk-grid-small uk-flex-middle uk-grid"
-                                                uk-grid="">
+                                            <div class="uk-child-width-auto uk-grid-small uk-flex-middle uk-grid">
                                                 <div class="uk-first-column">
                                                     <a class="uk-icon" href="" uk-icon="icon: linkedin;" target="_blank"
                                                         rel="noopener noreferrer"><svg width="20" height="20"
@@ -404,13 +319,6 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
 </body>
 
 </html>
