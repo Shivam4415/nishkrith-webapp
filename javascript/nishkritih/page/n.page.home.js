@@ -3,8 +3,11 @@ N.Page.Home = new (function () {
     MobileRepair: "#mobileRepair",
     HomePageButtonLogIn: "#btnHomePageLogIn",
     HomePageButtonSignUp: "#btnHomePageSignUp",
+    LoginPageButtonSignUp:"#btnSignUp",
     LoginModal: "#loginModal",
     RegisterModal: "#registerModal",
+
+
   };
   const init = () => {
     const _brands = [
@@ -26,6 +29,8 @@ N.Page.Home = new (function () {
   const _initModal = function () {
     $(Ids.HomePageButtonLogIn).on("click", openLoginModal);
     $(Ids.HomePageButtonSignUp).on("click", openSignUpModal);
+    $(Ids.LoginPageButtonSignUp).on("click", openSignUpModal);
+
   };
 
   const openLoginModal = () => {
