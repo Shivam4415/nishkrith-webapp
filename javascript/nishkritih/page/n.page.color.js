@@ -5,10 +5,10 @@ var init=function(){
          $(_parentContainerId).append(_outerGrid);
         var _grid=$(_parentContainerId).find('[ name="grid"]');
         var _colors=arguments[0];
-        _colors.forEach(function(p){
-            var _cardHtml=N.Page.Util.getCard(p.Id,p.Name,p.ImageUrl);
+        // _colors.forEach(function(p){
+            var _cardHtml=N.Page.Util.getCard(_colors.Id,_colors.Name,_colors.ImageUrl);
             _grid.append(_cardHtml);
-        });
+        // });
 }
 
     return {

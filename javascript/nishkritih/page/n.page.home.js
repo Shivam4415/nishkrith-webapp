@@ -51,7 +51,6 @@ N.Page.Home = new (function () {
     init: init,
   };
 })();
-
 window.onload = function () {
   N.Page.Home.init();
 };

@@ -21,7 +21,7 @@ N.Page.Util = new (function () {
       '<div class="uk-card uk-card-default uk-card-body uk-margin-left uk-card-small uk-width-small@s">' +
       '<img src="' +
       imgUrl +
-      '" class="">' +
+      '" class="" id="Image">' +name+
       "</div>" +
       '<div class="uk-card-title">' +
       // '<h3 class="uk-card-title">'+name+'</h3>'+
