@@ -9,17 +9,17 @@ N.Page.Home = new (function () {
   };
   const init = () => {
     const _brands = [
-      { Id: 1, Name: "Apple", ImageUrl: "/logo/apple.jpg" },
-      { Id: 2, Name: "Realme", ImageUrl: "/logo/realme.jpg" },
-      { Id: 3, Name: "Asus", ImageUrl: "/logo/asus.jpg" },
-      { Id: 4, Name: "Mi", ImageUrl: "/logo/mi.jpg" },
-      { Id: 5, Name: "Motorola", ImageUrl: "/logo/motorola.jpg" },
-      { Id: 6, Name: "Honor", ImageUrl: "/logo/honor.jpg" },
-      { Id: 7, Name: "Nokia", ImageUrl: "/logo/nokia.jpg" },
-      { Id: 8, Name: "OnePlus", ImageUrl: "/logo/oneplus.jpg" },
-      { Id: 9, Name: "Samsung", ImageUrl: "/logo/samsung.jpg" },
-      { Id: 10, Name: "Sony", ImageUrl: "/logo/sony.jpg" },
-      { Id: 11, Name: "Vivo", ImageUrl: "/logo/vivo.jpg" },
+      { Id: 0, Name: "Apple", ImageUrl: "/logo/apple.jpg" },
+      { Id: 1, Name: "Realme", ImageUrl: "/logo/realme.jpg" },
+      { Id: 2, Name: "Asus", ImageUrl: "/logo/asus.jpg" },
+      { Id: 3, Name: "Mi", ImageUrl: "/logo/mi.jpg" },
+      { Id: 4, Name: "Motorola", ImageUrl: "/logo/motorola.jpg" },
+      { Id: 5, Name: "Honor", ImageUrl: "/logo/honor.jpg" },
+      { Id: 6, Name: "Nokia", ImageUrl: "/logo/nokia.jpg" },
+      { Id: 7, Name: "OnePlus", ImageUrl: "/logo/oneplus.jpg" },
+      { Id: 8, Name: "Samsung", ImageUrl: "/logo/samsung.jpg" },
+      { Id: 9, Name: "Sony", ImageUrl: "/logo/sony.jpg" },
+      { Id: 10, Name: "Vivo", ImageUrl: "/logo/vivo.jpg" },
     ];
     N.Page.Brand.init(_brands);
 
