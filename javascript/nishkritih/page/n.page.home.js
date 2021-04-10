@@ -49,6 +49,7 @@ N.Page.Home = new (function () {
 
   return {
     init: init,
+    openSignUpModal:openSignUpModal
   };
 })();
 
