@@ -1,14 +1,11 @@
 N.Page.Login = (function () {
-
-  const apiUrl = 'http://localhost:5000';
+  const apiUrl = "http://localhost:5000";
   function _init() {
     $("#btnSignUp").on("click", btnSignup);
     $("#btnSignIn").on("click", btnSignin);
   }
 
-  function btnSignup() {
-
-  }
+  function btnSignup() {}
 
   function btnSignin() {
     //ToDo:use Jquery
@@ -17,67 +14,62 @@ N.Page.Login = (function () {
 
     if (!remail) {
       document.getElementById("Remail").innerHTML = "*email must be filled ";
-    }
-    else {
+    } else {
       var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
       if (!remail.match(mailformat)) {
-        document.getElementById("Remail").innerHTML = "entered an invalid email! ";
+        document.getElementById("Remail").innerHTML =
+          "entered an invalid email! ";
         return false;
-      }
-      else {
+      } else {
         document.getElementById("Remail").innerHTML = "";
       }
-    };
+    }
 
     var minNumberofChars = 6;
     var maxNumberofChars = 16;
     var regularExpression = /^[a-zA-Z0-9!@#$%^&*]{6,16}$/;
-    if (rpassword.length < minNumberofChars || rpassword.length > maxNumberofChars) {
-      document.getElementById("Rpassword").innerHTML = "password must be atleast 6 char";
+    if (
+      rpassword.length < minNumberofChars ||
+      rpassword.length > maxNumberofChars
+    ) {
+      document.getElementById("Rpassword").innerHTML =
+        "password must be atleast 6 char";
       return false;
-    }
-    else {
+    } else {
       document.getElementById("Rpassword").innerHTML = "";
-
     }
     validateLogin(remail, rpassword).done(function () {
       // set cookies header;
-
     });
     if (regularExpression.test(rpassword)) {
       document.getElementById("Rpassword").innerHTML =
         "password combination wrong";
       return false;
-    }
-    else {
+    } else {
       document.getElementById("Rpassword").innerHTML = "";
     }
-  };
-
+  }
 
   function validateLogin(userEmail, userPassword) {
     var defer = $.Deferred();
     $.ajax({
-      url: apiUrl+"/login",
-      method: 'POST',
-      data:{email: userEmail, password:userPassword},
-      dataType: 'json',
+      url: apiUrl + "/login",
+      method: "POST",
+      data: { email: userEmail, password: userPassword },
+      dataType: "json",
       success: function (res, xhr) {
         defer.resolve(res);
       },
       fail: function (error, xhr) {
         defer.reject(error);
-      }
+      },
     });
     // validateLogin(remail, rpassword).done(function () {
     //   // set cookies header;
     // });
 
     return defer.promise();
-  };
-
-
-
+  }
 
   return {
     init: _init,
