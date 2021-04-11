@@ -1,5 +1,3 @@
-
-
 N.Page.Util = new (function () {
   var createCard = function (id, name, imgUrl, type) {
     if (type == "Varient") {
@@ -15,7 +13,6 @@ N.Page.Util = new (function () {
         "<p></p>" +
         "</a>"
       );
-
     }
     return (
       '<a class="uk-padding-remove " name="' +
