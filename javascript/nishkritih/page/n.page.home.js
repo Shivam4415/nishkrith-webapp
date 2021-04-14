@@ -33,7 +33,7 @@ N.Page.Home = new (function () {
   function brand() {
     var d = $.Deferred();
     $.ajax({
-      url: apiUrl + "/brands/2",
+      url: apiUrl + "/brands/1",
       method: "GET",
       contentType: "application/json",
       dataType: "json",
