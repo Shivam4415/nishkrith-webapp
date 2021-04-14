@@ -1,5 +1,7 @@
+// import { config } from "./config";
+
 N.Page.Home = new (function () {
-  const apiUrl = "http://localhost:5000";
+
 
   const Ids = {
     MobileRepair: "#mobileRepair",
@@ -33,7 +35,7 @@ N.Page.Home = new (function () {
   function brand() {
     var d = $.Deferred();
     $.ajax({
-      url: apiUrl + "/brands/1",
+      url:"https://0611a1cca392.ngrok.io/brands/1",
       method: "GET",
       contentType: "application/json",
       dataType: "json",
