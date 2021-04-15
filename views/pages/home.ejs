@@ -15,54 +15,55 @@
     <script src="n.page.brand.js"></script>
     <script src="n.page.util.js"></script>
     <script src="n.page.home.js"></script>
-    <title></title>
+    <%- include('../partials/loginModal.html') -%>
+        <%-
+    include('../partials/registerModal.html') -%>
+
+            <title></title>
 </head>
 
 <body class="uk-overflow-auto">
-    <div id="Navigation" uk-grid>
-        <a class="uk-padding-remove-right">Home</a
-      >
-    </div>
+    <%- include('../partials/header.ejs') -%>
+        <div id="Navigation" uk-grid>
+            <a class="uk-padding-remove-right">Home</a>
+        </div>
 
-    <div id="Product" class="uk-hidden uk-margin-medium-left">
-      <h1>Select Product</h1>
-    </div>
-    <div id="Color" class="uk-hidden uk-margin-medium-left">
-      <h1>Select Color</h1>
-    </div>
-    <div id="Checkout">
-      <div name="modal"></div>
-      <div name="color"></div>
-      <span>Pick Your Repair Service</span>
-    </div>
-    <div id="offcanvas-flip" uk-offcanvas="flip: true; overlay: true">
-      <div class="uk-offcanvas-bar">
-        <button class="uk-offcanvas-close" type="button" uk-close></button>
+        <div id="Product" class="uk-hidden uk-margin-medium-left">
+            <h1>Select Product</h1>
+        </div>
+        <div id="Color" class="uk-hidden uk-margin-medium-left">
+            <h1>Select Color</h1>
+        </div>
+        <div id="Checkout">
+            <div name="modal"></div>
+            <div name="color"></div>
+            <span>Pick Your Repair Service</span>
+        </div>
+        <div id="offcanvas-flip" uk-offcanvas="flip: true; overlay: true">
+            <div class="uk-offcanvas-bar">
+                <button class="uk-offcanvas-close" type="button" uk-close></button>
 
-        <img src="https://www.cashify.in/static/svgs/sign_in.svg" />
+                <img src="https://www.cashify.in/static/svgs/sign_in.svg" />
 
-        <h6>You’re just 1-step away from repairing your device.</h6>
-        <p>Please enter your phone number</p>
-        <input
-          class="uk-input"
-          type="text"
-          placeholder="Please Enter your contact number"
-        />
-        <div class="uk-margin">
-          <button id="btnPhoneNumber" class="uk-button uk-button-primary">
+                <h6>You’re just 1-step away from repairing your device.</h6>
+                <p>Please enter your phone number</p>
+                <input class="uk-input" type="text" placeholder="Please Enter your contact number" />
+                <div class="uk-margin">
+                    <button id="btnPhoneNumber" class="uk-button uk-button-primary">
             Continue
           </button>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <div class="">
-      <h2 class="uk-card-title uk-margin-remove-bottom">Top Selling Brands</h2>
-    </div>
+        <div class="">
+            <h2 class="uk-card-title uk-margin-remove-bottom">Top Selling Brands</h2>
+        </div>
 
-    <div>
-      <div class="uk-flex uk-flex-wrap">
-        <div id="Brand" class="uk-margin-medium-left"></div>
-      </div>
-    </div>
-  </body>
+        <div>
+            <div class="uk-flex uk-flex-wrap">
+                <div id="Brand" class="uk-margin-medium-left"></div>
+            </div>
+        </div>
+</body>
+
 </html>
