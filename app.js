@@ -1,7 +1,7 @@
 const express = require("express");
 //const { config } = require("node:process");
 const app = express();
-const port = 3000;
+const port = process.env.Port || 3000 ;
 const router = require("./route/router");
 
 // Static Files
