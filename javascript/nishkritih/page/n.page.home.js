@@ -11,10 +11,12 @@ N.Page.Home = new (function () {
   };
   const productType = 1;
   const init = () => {
-    brand().done(function (brands) {
-      N.Page.Brand.init(brands);
-      // set cookies header;
-    });
+    N.Page.Brand.init();
+
+    // brand().done(function (brands) {
+    //   N.Page.Brand.init(brands);
+    //   // set cookies header;
+    // });
     _initModal();
   };
   const _initModal = function () {
