@@ -11,6 +11,7 @@ N.Page.Home = new (function () {
     LoginModal: "#loginModal",
     RegisterModal: "#registerModal",
   };
+  const productType = 1;
   const init = () => {
     brand().done(function (brands) {
       N.Page.Brand.init(brands);
@@ -35,7 +36,7 @@ N.Page.Home = new (function () {
   function brand() {
     var d = $.Deferred();
     $.ajax({
-      url:"https://0611a1cca392.ngrok.io/brands/1",
+      url: apiUrl + "/brands/" + productType,
       method: "GET",
       contentType: "application/json",
       dataType: "json",
