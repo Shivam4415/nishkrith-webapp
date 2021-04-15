@@ -30,7 +30,7 @@ N.Page.Product = new(function() {
                 }, ];
                 N.Page.Color.init(colors);
                 $(_containerIds.Navigation).append(
-                    '<a href="http://localhost:3000/home" class="uk-padding-remove-left">>Color</a>'
+                    '<a href=' + window.location.href + ' class="uk-padding-remove-left">>Color</a>'
                 );
             });
         });
