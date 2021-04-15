@@ -1,7 +1,7 @@
 const express = require("express");
 //const { config } = require("node:process");
 const app = express();
-const port = 3000;
+const port = process.env.Port || 3000 ;
 const router = require("./route/router");
 
 // Static Files
@@ -61,6 +61,8 @@ app.set("view engine", "ejs");
 app.engine("html", require("ejs").renderFile);
 
 app.use("/", router);
+
+
 
 // Listen on port 3000
 app.listen(port, () => {
