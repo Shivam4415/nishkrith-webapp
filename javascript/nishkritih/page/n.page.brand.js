@@ -14,19 +14,12 @@ N.Page.Brand = new (function () {
     _brands.forEach(function (b) {
       var _cardHtml = N.Page.Util.getCard(b.id, b.name, b.logo);
       _grid.append(_cardHtml);
-      $(_parentContainerId).on("click", '[name="' + b.Id + '"]', function () {
+      $(_parentContainerId).on("click", '[name="' + b.id + '"]', function () {
         $(_containerIds.Color).addClass("uk-hidden");
         $(_containerIds.Brand).addClass("uk-hidden");
         $(_containerIds.Product).removeClass("uk-hidden");
         //fecth all product having id b.id and pass that as parameter;
-        var _products = [
-          {
-            Id: 1,
-            Name: "Apple6",
-            ImageUrl:
-              "https://s3n.cashify.in/cashify/product/img/xhdpi/csh-qp4ba4sq-aeny.png",
-          },
-        ];
+        var _products = b.model;
         N.Page.Product.init(_products);
         $(_containerIds.Navigation).append(
           '<a href="http://localhost:3000/home" class="uk-padding-remove">>Product</a>'
