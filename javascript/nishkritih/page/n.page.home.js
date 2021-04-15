@@ -1,5 +1,7 @@
+// import { config } from "./config";
+
 N.Page.Home = new (function () {
-  const apiUrl = "http://localhost:5000";
+
 
   const Ids = {
     MobileRepair: "#mobileRepair",

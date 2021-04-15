@@ -13,9 +13,12 @@ N.Page.Product = new (function () {
     var _grid = $(_parentContainerId).find('[ name="grid"]');
     var _products = arguments[0];
     _products.forEach(function (p) {
-      var _cardHtml = N.Page.Util.getCard(p.Id, p.Name, p.ImageUrl);
+      // var i=0;
+      var _cardHtml = N.Page.Util.getCard(p.id, p.name, p.logo);
+      // i++;
       _grid.append(_cardHtml);
-      $(_parentContainerId).on("click", '[name="' + p.Id + '"]', function () {
+    
+      $(_parentContainerId).on("click", '[name="' + p.id + '"]', function () {
         //get colors associated with that product
         $(_containerIds.Product).addClass("uk-hidden");
         $(_containerIds.Brand).addClass("uk-hidden");
