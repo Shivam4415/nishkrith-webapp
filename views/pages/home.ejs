@@ -19,6 +19,9 @@
     <script src="n.page.brand.js"></script>
     <script src="n.page.util.js"></script>
     <script src="n.page.home.js"></script>
+    <script src="n.control.accessories.js"></script>
+    <script src="n.control.finalproduct.js"></script>
+    <script src="n.control.pricesummary.js"></script>
     <%-  include('../partials/loginModal.html') -%>
     <%-  include('../partials/registerModal.html') -%>
     
@@ -158,11 +161,14 @@
         <h1>Select Color</h1>
         
     </div> 
-    <div id="Checkout">
-        <div name="modal"></div>
-        <div name="color"></div>
-        <span>Pick Your Repair Service</span>
-        
+    <div id="Checkout" class="uk-hidden uk-margin-large-left" uk-grid>
+        <div id="ProductSummary" class="uk-card uk-card-body uk-width-2-3">
+
+        </div>
+        <div id="PriceSummary" class="uk-card uk-card-body uk-margin-small-left uk-width-1-4 uk-padding-small-right">
+            <span>Price Summary</span>
+
+        </div>
 
     </div>
     <div id="offcanvas-flip" uk-offcanvas="flip: true; overlay: true">

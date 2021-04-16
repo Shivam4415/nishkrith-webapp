@@ -19,6 +19,8 @@ app.use(express.static("img"));
 
 app.use(express.static("javascript"));
 app.use(express.static("javascript/nishkritih/page"));
+app.use(express.static("javascript/nishkritih/control"));
+
 
 // app.use(express.static("jquery"));
 // app.use(express.static("jquery"));
