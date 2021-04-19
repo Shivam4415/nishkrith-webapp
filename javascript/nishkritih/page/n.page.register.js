@@ -75,7 +75,7 @@ N.Page.Register = (function () {
     ) {
       var defer = $.Deferred();
       $.ajax({
-        url: N.apiUrl + "/register",
+        url: apiUrl + "/register",
         method: "POST",
         data: {
           email: userEmail,

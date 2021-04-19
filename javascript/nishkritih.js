@@ -15,15 +15,6 @@
 
     window.N = N;
   }
-  String.prototype.format=function(){
-    var args = arguments;
-    return this.replace(/{(\d+)}/g, function(match, number) { 
-      return typeof args[number] != 'undefined'
-        ? args[number]
-        : match
-      ;
-    });
-  }
 
   // define M as a global M variable, saving the original M to restore later if needed
   if (typeof window !== "undefined") {
@@ -521,10 +512,6 @@
     },
   };
 
-  N.Urls = {
-    apiUrl: "https://nk-config-be.herokuapp.com"
-  }
-
   if (document.addEventListener) {
     // Used to associate functions on document on load event
     document.addEventListener(
@@ -555,7 +542,6 @@
   N.Validators.reset = N.Validators.reset;
   N.Validators.attachValidator = N.Validators.attachValidator;
   N.isFirstSubmit = N.Validators.isFirstSubmit;
-  N.apiUrl = N.Urls.apiUrl;
 
   N.Modal = {};
 
