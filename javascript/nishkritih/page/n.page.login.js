@@ -53,7 +53,7 @@ N.Page.Login = (function () {
   function validateLogin(userEmail, userPassword) {
     var defer = $.Deferred();
     $.ajax({
-      url: N.apiUrl + "/login",
+      url: apiUrl + "/login",
       method: "POST",
       data: { email: userEmail, password: userPassword },
       dataType: "json",

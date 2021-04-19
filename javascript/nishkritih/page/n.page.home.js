@@ -1,3 +1,5 @@
+// import { config } from "./config";
+
 N.Page.Home = new (function () {
 
 
@@ -11,11 +13,12 @@ N.Page.Home = new (function () {
   };
   const productType = 1;
   const init = () => {
+    N.Page.Brand.init();
 
-    brand().done(function (brands) {
-      N.Page.Brand.init(brands);
-      // set cookies header;
-    });
+    // brand().done(function (brands) {
+    //   N.Page.Brand.init(brands);
+    //   // set cookies header;
+    // });
     _initModal();
   };
   const _initModal = function () {
@@ -35,7 +38,7 @@ N.Page.Home = new (function () {
   function brand() {
     var d = $.Deferred();
     $.ajax({
-      url: N.apiUrl + "/brands/" + productType,
+      url: apiUrl + "/brands/" + productType,
       method: "GET",
       contentType: "application/json",
       dataType: "json",
