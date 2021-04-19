@@ -521,6 +521,10 @@
     },
   };
 
+  N.Urls = {
+    apiUrl: "https://nk-config-be.herokuapp.com"
+  }
+
   if (document.addEventListener) {
     // Used to associate functions on document on load event
     document.addEventListener(
@@ -551,6 +555,7 @@
   N.Validators.reset = N.Validators.reset;
   N.Validators.attachValidator = N.Validators.attachValidator;
   N.isFirstSubmit = N.Validators.isFirstSubmit;
+  N.apiUrl = N.Urls.apiUrl;
 
   N.Modal = {};
 
