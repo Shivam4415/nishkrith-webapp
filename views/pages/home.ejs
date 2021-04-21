@@ -15,6 +15,7 @@
     <script src="n.page.brand.js"></script>
     <script src="n.page.util.js"></script>
     <script src="n.page.home.js"></script>
+    <script src="n.page.loginOffCanvas.js"></script>
     <script src="n.control.accessories.js"></script>
     <script src="n.control.finalproduct.js"></script>
     <script src="n.control.pricesummary.js"></script>
@@ -46,15 +47,24 @@
                 <button class="uk-offcanvas-close" type="button" uk-close></button>
 
                 <img src="https://www.cashify.in/static/svgs/sign_in.svg" />
-
+            <div id="divLoginUser">
                 <h6>You’re just 1-step away from repairing your device.</h6>
                 <p>Please enter your phone number</p>
-                <input class="uk-input" type="text" placeholder="Please Enter your contact number" />
+                <input id="loginPhoneNumber" class="uk-input" type="text" placeholder="Please Enter your contact number" />
                 <div class="uk-margin">
-                    <button id="btnPhoneNumber" class="uk-button uk-button-primary">
-            Continue
-          </button>
+                    <button id="btnPhoneNumber" class="uk-button uk-button-primary">Continue</button>
                 </div>
+            </div>
+
+            <div id="divVerifyUser" hidden>
+                <h6>Enter OTP</h6>
+                <p>We have sent OTP on </p><div id="labelPhone"></div>
+                <input id="inputOtp" class="uk-input" type="text" placeholder="Enter OTP" />
+                <div class="uk-margin">
+                    <button id="btnVerifyOtp" class="uk-button uk-button-primary">verify otp</button>
+                </div>
+            </div>
+
             </div>
         </div>
     </nav>

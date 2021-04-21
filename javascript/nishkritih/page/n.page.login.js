@@ -1,5 +1,4 @@
 N.Page.Login = (function () {
-  const apiUrl = "http://localhost:5000";
   function _init() {
     $("#btnSignUp").on("click", btnSignup);
     $("#btnSignIn").on("click", btnSignin);

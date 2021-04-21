@@ -522,7 +522,8 @@
   };
 
   N.Urls = {
-    apiUrl: "https://nk-config-be.herokuapp.com"
+    // apiUrl: "https://nk-config-be.herokuapp.com",
+    apiUrl: "http://localhost:1337"
   }
 
   if (document.addEventListener) {

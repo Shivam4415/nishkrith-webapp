@@ -17,6 +17,7 @@ N.Page.Home = new (function () {
       // set cookies header;
     });
     _initModal();
+    N.Page.LoginOffCanvas.init();
   };
   const _initModal = function () {
     $(Ids.HomePageButtonLogIn).on("click", openLoginModal);
