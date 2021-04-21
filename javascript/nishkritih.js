@@ -15,15 +15,6 @@
 
     window.N = N;
   }
-  String.prototype.format=function(){
-    var args = arguments;
-    return this.replace(/{(\d+)}/g, function(match, number) { 
-      return typeof args[number] != 'undefined'
-        ? args[number]
-        : match
-      ;
-    });
-  }
 
   // define M as a global M variable, saving the original M to restore later if needed
   if (typeof window !== "undefined") {
