@@ -1,7 +1,7 @@
 const express = require("express");
 //const { config } = require("node:process");
 const app = express();
-const port = process.env.PORT || 3000 ;
+const port = process.env.PORT || 5050 ;
 const router = require("./route/router");
 
 app.use(express.static("jquery"));

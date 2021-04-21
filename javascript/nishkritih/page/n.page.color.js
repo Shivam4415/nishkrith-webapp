@@ -19,7 +19,7 @@ N.Page.Color = new (function () {
       $(_parentContainerId).on("click", '[name="' + p.id + '"]', function () {
         //check if user is logged in
         //if not then show log in interface.
-        //UIkit.offcanvas($(_logInOffCanvas)).show();
+        UIkit.offcanvas($(_logInOffCanvas)).show();
         $(_containerIds.Product).addClass("uk-hidden");
         $(_containerIds.Brand).addClass("uk-hidden");
         $(_containerIds.Color).addClass("uk-hidden");
