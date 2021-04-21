@@ -1,5 +1,3 @@
-// import { config } from "./config";
-
 N.Page.Home = new (function () {
 
 
@@ -13,13 +11,13 @@ N.Page.Home = new (function () {
   };
   const productType = 1;
   const init = () => {
-    N.Page.Brand.init();
 
-    // brand().done(function (brands) {
-    //   N.Page.Brand.init(brands);
-    //   // set cookies header;
-    // });
+    brand().done(function (brands) {
+      N.Page.Brand.init(brands);
+      // set cookies header;
+    });
     _initModal();
+    N.Page.LoginOffCanvas.init();
   };
   const _initModal = function () {
     $(Ids.HomePageButtonLogIn).on("click", openLoginModal);
@@ -38,7 +36,7 @@ N.Page.Home = new (function () {
   function brand() {
     var d = $.Deferred();
     $.ajax({
-      url: apiUrl + "/brands/" + productType,
+      url: N.apiUrl + "/brands/" + productType,
       method: "GET",
       contentType: "application/json",
       dataType: "json",

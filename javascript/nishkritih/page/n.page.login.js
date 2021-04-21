@@ -1,5 +1,4 @@
 N.Page.Login = (function () {
-  const apiUrl = "http://localhost:5000";
   function _init() {
     $("#btnSignUp").on("click", btnSignup);
     $("#btnSignIn").on("click", btnSignin);
@@ -53,7 +52,7 @@ N.Page.Login = (function () {
   function validateLogin(userEmail, userPassword) {
     var defer = $.Deferred();
     $.ajax({
-      url: apiUrl + "/login",
+      url: N.apiUrl + "/login",
       method: "POST",
       data: { email: userEmail, password: userPassword },
       dataType: "json",
