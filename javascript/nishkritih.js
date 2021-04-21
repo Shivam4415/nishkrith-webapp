@@ -522,8 +522,8 @@
   };
 
   N.Urls = {
-    // apiUrl: "https://nk-config-be.herokuapp.com",
-    apiUrl: "http://localhost:1337"
+    apiUrl: "https://nk-config-be.herokuapp.com",
+    localApiUrl: "http://localhost:1337"
   }
 
   if (document.addEventListener) {
@@ -557,6 +557,7 @@
   N.Validators.attachValidator = N.Validators.attachValidator;
   N.isFirstSubmit = N.Validators.isFirstSubmit;
   N.apiUrl = N.Urls.apiUrl;
+  N.localApiUrl = N.Urls.localApiUrl;
 
   N.Modal = {};
 
