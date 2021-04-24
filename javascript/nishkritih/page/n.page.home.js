@@ -1,6 +1,4 @@
 N.Page.Home = new (function () {
-
-
   const Ids = {
     MobileRepair: "#mobileRepair",
     HomePageButtonLogIn: "#btnHomePageLogIn",
@@ -11,6 +9,21 @@ N.Page.Home = new (function () {
   };
   const productType = 1;
   const init = () => {
+    var _parentId = "#Brand";
+
+    for (i = 1; i <= N.totalBrands; i++) {
+      $(_parentId).append(
+        '<a class="uk-padding-remove" name="' +
+          i +
+          '">' +
+          '<div class="uk-card uk-card-default uk-margin-bottom uk-margin-top uk-card-body uk-margin-left uk-card-small uk-width-small@s">' +
+          '<img src="" id="' +
+          i +
+          '">' +
+          "</div>" +
+          "</a>"
+      );
+    }
 
     brand().done(function (brands) {
       N.Page.Brand.init(brands);

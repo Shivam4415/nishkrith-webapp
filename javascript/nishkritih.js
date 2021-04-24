@@ -38,6 +38,7 @@
     isNullUndefinedOrEmpty: function (x) {
       return x === null || x === undefined || !x.length;
     },
+    totalBrands: 16,
   };
 
   N.isNullOrUndefined = N.Util.isNullOrUndefined;
@@ -523,8 +524,8 @@
   };
 
   N.Urls = {
-    apiUrl: "https://nk-config-be.herokuapp.com",
-    localApiUrl: "http://localhost:1337"
+    localApiUrl: "https://nk-config-be.herokuapp.com",
+    apiUrl: "http://localhost:1337"
   }
 
   if (document.addEventListener) {
@@ -559,6 +560,7 @@
   N.isFirstSubmit = N.Validators.isFirstSubmit;
   N.apiUrl = N.Urls.apiUrl;
   N.localApiUrl = N.Urls.localApiUrl;
+  N.totalBrands = N.Util.totalBrands;
 
   N.Modal = {};
 
