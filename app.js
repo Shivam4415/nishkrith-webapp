@@ -1,7 +1,8 @@
 const express = require("express");
+const cookieParser = require("cookie-parser");
 //const { config } = require("node:process");
 const app = express();
-const port = process.env.PORT || 5050 ;
+const port = process.env.PORT || 5050;
 const router = require("./route/router");
 
 app.use(express.static("jquery"));
@@ -13,6 +14,8 @@ app.use(express.static("img"));
 app.use(express.static("javascript"));
 app.use(express.static("javascript/nishkritih/page"));
 app.use(express.static("javascript/nishkritih/control"));
+app.use(cookieParser());
+app.use(express.json());
 // Set Views
 app.set("views", "./views/pages");
 app.set("view engine", "ejs");
