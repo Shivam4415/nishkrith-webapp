@@ -63,7 +63,7 @@ N.Page.Color = new (function () {
     });
   };
 
-  return {
-    init: init,
-  };
+    return {
+        init: init,
+    };
 })();

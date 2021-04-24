@@ -1,5 +1,6 @@
 N.Page.LoginOffCanvas = new (function () {
-  let phone = "";
+  let _phone = "";
+  let _hash = "";
   const channel = "sms";
   const _elements = {
     btnPhoneNumber: "#btnPhoneNumber",
@@ -18,11 +19,11 @@ N.Page.LoginOffCanvas = new (function () {
 
   function generateOtp() {
     // Show loading circle
-    phone = $(_elements.loginPhoneNumber).val();
-    $(_elements.labelPhone).html(phone);
+    _phone = $(_elements.loginPhoneNumber).val();
+    $(_elements.labelPhone).html(_phone);
     /* Logics: Validate phone number is from India and contains 10 digit number only. If 12 digit lets remove first two digit. */
-    sendOtp({ phone, channel }).done(function (res) {
-      const hash = res.hash;
+    sendOtp({ phone: _phone, channel }).done(function (res) {
+      _hash = res.hash;
       $(_elements.divLoginUser).attr("hidden", "hidden");
       $(_elements.divVerifyUser).removeAttr("hidden");
 
@@ -31,8 +32,8 @@ N.Page.LoginOffCanvas = new (function () {
   }
 
   function loginUser() {
-    const otp = $(_elements.inputOtp);
-    const hash = verifyOtp({ phone, otp, hash }).done(function (data) {
+    const otp = $(_elements.inputOtp).val();
+    verifyOtp({ phone: _phone, otp, hash: _hash }).done(function (data) {
       // generate hash from response received in sendOtp endPoints.
       const h = data;
       /* now add logic to create cookie and store in the browser. In case if someone removes the cookie then log out that user. */
@@ -42,9 +43,9 @@ N.Page.LoginOffCanvas = new (function () {
   function verifyOtp(data) {
     var d = $.Deferred();
     $.ajax({
-      url: N.apiUrl + "/verifyOtp/",
+      url: "./verifyToken",
       method: "POST",
-      data: data,
+      data: JSON.stringify(data),
       contentType: "application/json",
       dataType: "json",
       success: function (res, xhr) {
