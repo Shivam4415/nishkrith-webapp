@@ -21,6 +21,16 @@
     expose();
   }
 
+  String.prototype.format = String.prototype.f = function () {
+    var s = this,
+      i = arguments.length;
+
+    while (i--) {
+      s = s.replace(new RegExp("\\{" + i + "\\}", "gm"), arguments[i]);
+    }
+    return s;
+  };
+
   N.Util = {
     isNullOrUndefined: function (x) {
       return x === null || x === undefined;
@@ -28,6 +38,7 @@
     isNullUndefinedOrEmpty: function (x) {
       return x === null || x === undefined || !x.length;
     },
+    totalBrands: 16,
   };
 
   N.isNullOrUndefined = N.Util.isNullOrUndefined;
@@ -512,6 +523,11 @@
     },
   };
 
+  N.Urls = {
+    localApiUrl: "https://nk-config-be.herokuapp.com",
+    apiUrl: "http://localhost:1337"
+  }
+
   if (document.addEventListener) {
     // Used to associate functions on document on load event
     document.addEventListener(
@@ -542,6 +558,9 @@
   N.Validators.reset = N.Validators.reset;
   N.Validators.attachValidator = N.Validators.attachValidator;
   N.isFirstSubmit = N.Validators.isFirstSubmit;
+  N.apiUrl = N.Urls.apiUrl;
+  N.localApiUrl = N.Urls.localApiUrl;
+  N.totalBrands = N.Util.totalBrands;
 
   N.Modal = {};
 

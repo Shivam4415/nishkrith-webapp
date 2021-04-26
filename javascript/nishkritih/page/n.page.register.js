@@ -1,6 +1,5 @@
 //iffe
 N.Page.Register = (function () {
-  const apiUrl = "http://localhost:5000";
   function _init() {
     $("#submit").on("click", btnsubmit);
   }
@@ -75,7 +74,7 @@ N.Page.Register = (function () {
     ) {
       var defer = $.Deferred();
       $.ajax({
-        url: apiUrl + "/register",
+        url: N.apiUrl + "/register",
         method: "POST",
         data: {
           email: userEmail,

@@ -1,6 +1,4 @@
 N.Page.Home = new (function () {
-  const apiUrl = "http://localhost:5000";
-
   const Ids = {
     MobileRepair: "#mobileRepair",
     HomePageButtonLogIn: "#btnHomePageLogIn",
@@ -9,12 +7,30 @@ N.Page.Home = new (function () {
     LoginModal: "#loginModal",
     RegisterModal: "#registerModal",
   };
+  const productType = 1;
   const init = () => {
+    var _parentId = "#Brand";
+
+    for (i = 1; i <= N.totalBrands; i++) {
+      $(_parentId).append(
+        '<a class="uk-padding-remove" name="' +
+          i +
+          '">' +
+          '<div class="uk-card  uk-margin-bottom uk-margin-top uk-animate uk-card-body uk-margin-left uk-width-small@s">' +
+          '<img src="" id="' +
+          i +
+          '">' +
+          "</div>" +
+          "</a>"
+      );
+    }
+
     brand().done(function (brands) {
       N.Page.Brand.init(brands);
       // set cookies header;
     });
     _initModal();
+    N.Page.LoginOffCanvas.init();
   };
   const _initModal = function () {
     $(Ids.HomePageButtonLogIn).on("click", openLoginModal);
@@ -33,7 +49,7 @@ N.Page.Home = new (function () {
   function brand() {
     var d = $.Deferred();
     $.ajax({
-      url: apiUrl + "/brands/2",
+      url: N.apiUrl + "/brands/" + productType,
       method: "GET",
       contentType: "application/json",
       dataType: "json",

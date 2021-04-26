@@ -11,9 +11,9 @@ N.Control.Accessories=(function(){
       _addButton+_removeButton+
       '</div>'+
 '</div>'
-var _container=_data.Container;;
  var Accessories=function(){
     var _data=arguments[0];
+    var _container=_data.Container;
     var _icon=_data.Icon;
     var _name=_data.Name;
     var _price=_data.Price;

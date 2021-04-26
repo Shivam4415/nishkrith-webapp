@@ -2,130 +2,89 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="css/uikit.theme.css">
-    <link rel="stylesheet" href="css/chosen.css">
-    <script src="js/chosen.jquery.js"></script>
+    <link rel="stylesheet" href="css/uikit.theme.css" />
+    <link rel="stylesheet" href="css/chosen.css" />
     <script src="js/jquery-3.4.1.js"></script>
-    <!-- <script src="./jquery/jquery-3.4.1.min.js"></script> -->
     <script src="js/uikit-icons.js"></script>
-    <!-- <script src="/uikit-icons.min.js"></script> -->
     <script src="js/uikit.js"></script>
-    <!-- <script src="/uikit.min.js"></script> -->
-    <link rel="stylesheet" href="css/uikit-rtl.css">
-    <link rel="stylesheet" href="css/uikit.css">
+    <link rel="stylesheet" href="css/uikit-rtl.css" />
+    <link rel="stylesheet" href="css/uikit.css" />
     <script src="nishkritih.js"></script>
     <script src="n.page.color.js"></script>
     <script src="n.page.product.js"></script>
     <script src="n.page.brand.js"></script>
     <script src="n.page.util.js"></script>
     <script src="n.page.home.js"></script>
-    <%-  include('../partials/loginModal.html') -%>
-    <%-  include('../partials/registerModal.html') -%>
-    <title></title>
+    <script src="n.page.card.js"></script>
+
+    <script src="n.page.loginOffCanvas.js"></script>
+    <script src="n.control.accessories.js"></script>
+    <script src="n.control.finalproduct.js"></script>
+    <script src="n.control.pricesummary.js"></script>
+    <%- include('../partials/loginModal.html') -%>
+        <%- include('../partials/registerModal.html') -%>
+
+            <title></title>
 </head>
 
 <body class="uk-overflow-auto">
-    <%-  include('../partials/header.ejs') -%>
-    <div id="Navigation" uk-grid>
-        <a href='http://localhost:3000/home' class="uk-padding-remove-right">Home</a>
-    </div>
-    
-    <div id="Product" class="uk-hidden uk-margin-medium-left">
-        <h1>Select Product</h1>
-        
-    </div>
-    <div id="Color" class="uk-hidden uk-margin-medium-left">
-        <h1>Select Color</h1>
-        
-    </div> 
-    <div id="Checkout">
-        <div name="modal"></div>
-        <div name="color"></div>
-        <span>Pick Your Repair Service</span>
-        
-
-    </div>
-    <div id="offcanvas-flip" uk-offcanvas="flip: true; overlay: true">
-        <div class="uk-offcanvas-bar">
-          <button class="uk-offcanvas-close" type="button" uk-close></button>
-      
-          <img src="https://www.cashify.in/static/svgs/sign_in.svg" />
-      
-          <h6>
-            You’re just 1-step away from repairing your device.
-          </h6>
-          <p> Please enter your phone number</p>
-          <input class="uk-input" type="text" placeholder="Please Enter your contact number">
-          <div class="uk-margin"><button id="btnPhoneNumber" class="uk-button uk-button-primary">Continue</button></div>
+    <%- include('../partials/header.ejs') -%>
+        <div id="Navigation" uk-grid>
+            <a class="uk-padding-remove-right">Home</a>
         </div>
-    </div>
-        <div class="">
+
+        <div id="Product" class="uk-hidden uk-margin-medium-left">
+            <h1>Select Product</h1>
+        </div>
+        <div id="Color" class="uk-hidden uk-margin-medium-left">
+            <h1>Select Color</h1>
+        </div>
+
+        <div id="Checkout" class="uk-margin-remove">
+            <div name="modal"></div>
+            <div name="color"></div>
+            <span class="">Pick Your Repair Service</span>
+        </div>
+        <div id="offcanvas-flip" uk-offcanvas="flip: true; overlay: true">
+            <div class="uk-offcanvas-bar">
+                <button class="uk-offcanvas-close" type="button" uk-close></button>
+
+                <img src="https://www.cashify.in/static/svgs/sign_in.svg" />
+                <div id="divLoginUser">
+                    <h6>You’re just 1-step away from repairing your device.</h6>
+                    <p>Please enter your phone number</p>
+                    <input id="loginPhoneNumber" class="uk-input" type="text"
+                        placeholder="Please Enter your contact number" />
+                    <div class="uk-margin">
+                        <button id="btnPhoneNumber" class="uk-button uk-button-primary">
+                            Continue
+                        </button>
+                    </div>
+                </div>
+
+                <div id="divVerifyUser" hidden>
+                    <h6>Enter OTP</h6>
+                    <p>We have sent OTP on</p>
+                    <div id="labelPhone"></div>
+                    <input id="inputOtp" class="uk-input" type="text" placeholder="Enter OTP" />
+                    <div class="uk-margin">
+                        <button id="btnVerifyOtp" class="uk-button uk-button-primary">
+                            verify otp
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="uk-margin-small">
             <h2 class="uk-card-title uk-margin-remove-bottom">Top Selling Brands</h2>
-        </div>
 
-        <div>
-            <div class="uk-flex uk-flex-wrap ">
-                <div id="Brand" class="uk-margin-medium-left">
-                </div>
+            <div class="uk-flex uk-flex-wrap">
+                <div id="Brand" class="uk-margin-medium-left uk-grid"></div>
             </div>
         </div>
 
-
-    <div class="uk-card-default uk-card uk-card-body">
-            <div class="">
-                <h2 class="uk-padding-remove-top">How Cashify Works</h2>
-            </div>
-        <ul class="uk-child-width-expand@s uk-text-center" uk-grid>
-            <li class="uk-width-1-4 uk-card-small uk-margin-large-left">
-                <div class="uk-card uk-card-body uk-padding-remove">
-                    <i class="">
-                        <img class="uk-width-1-3@m" alt="Check Price" src="/logo/price_check.png"></i>
-                    <div class="">
-                        <div class="">
-                            <span
-                                class="">1</span>
-                            <div><span class="">Check Price</span>
-                            </div>
-                        </div>
-                        <p class="">Select your device &amp; tell us about its current
-                            condition, and our advanced AI tech will tailor make the perfect price for you.</p>
-                    </div>
-                </div>
-            </li>
-            <li class="uk-width-1-4 uk-card-small uk-margin-auto">
-                <div class="uk-card uk-card-body uk-padding-remove">
-                    <i class="">
-                        <img class="uk-width-3-5@m" alt="Schedule Pickup" src="/logo/pickup.png">
-                    </i>
-                    <div class="">
-                        <div class="">
-                            <span
-                                class="">2</span>
-                            <div><span class="">Schedule Pickup</span>
-                            </div>
-                        </div>
-                        <p class="">Book a free pickup from your home or work at a time
-                            slot that best suits your convenience.</p>
-                    </div>
-                </div>
-            </li>
-            <li class="uk-width-1-4 uk-card-small">
-                <div class="uk-card uk-card-body uk-padding-remove"><i
-                        class=""><img class="uk-width-1-3@m" alt="Get Paid"
-                            src="/logo/paid.png"></i>
-                    <div class="">
-                        <div class=""><span
-                                class="">3</span>
-                            <div><span class="">Get Paid</span></div>
-                        </div>
-                        <p class="">Did we mention you get paid as soon as our executive
-                            picks up your device? It's instant payment all the way!</p>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div>
-    <%-  include('../partials/footer.ejs')  -%>
+        <%- include('../partials/footer.ejs') -%>
 </body>
 
 </html>
