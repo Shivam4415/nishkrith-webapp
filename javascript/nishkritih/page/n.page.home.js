@@ -6,6 +6,8 @@ N.Page.Home = new (function () {
     LoginPageButtonSignUp: "#btnSignUp",
     LoginModal: "#loginModal",
     RegisterModal: "#registerModal",
+    SupplierModal: "#redirect",
+
   };
   const productType = 1;
   const init = () => {
@@ -31,11 +33,16 @@ N.Page.Home = new (function () {
     });
     _initModal();
     N.Page.LoginOffCanvas.init();
+    N.Page.Supplier.init();
+  
   };
+
   const _initModal = function () {
     $(Ids.HomePageButtonLogIn).on("click", openLoginModal);
     $(Ids.HomePageButtonSignUp).on("click", openSignUpModal);
     $(Ids.LoginPageButtonSignUp).on("click", openSignUpModal);
+    $(Ids.SupplierModal).on("click", supplier);
+
   };
 
   const openLoginModal = () => {
@@ -44,6 +51,9 @@ N.Page.Home = new (function () {
 
   const openSignUpModal = () => {
     UIkit.modal(Ids.RegisterModal).show();
+  };
+  const supplier = () => {
+    window.location.redirect("views\partials\supplier.html");
   };
 
   function brand() {
