@@ -12,6 +12,9 @@ router.get("/home", (req, res) => {
 router.get("/dashboard", (req, res) => {
   res.render("dashboard", {text: "This is text"});
 });
+router.get("/OxygenSupplier", (req, res) => {
+  res.redirect("OxygenSupplier");
+});
 
 // router.route('/signup')
 //     .get(sessionChecker, (req, res) => {

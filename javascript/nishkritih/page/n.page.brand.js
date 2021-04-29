@@ -9,12 +9,12 @@ N.Page.Brand = new(function() {
     var init = function() {
         var _parentContainerId = "#Brand";
         var _outerGrid = '<div uk-grid name="grid"></div>';
-        $(_parentContainerId).append(_outerGrid);
+         $(_parentContainerId).append(_outerGrid);
         var _grid = $(_parentContainerId).find('[ name="grid"]');
         var _brands = arguments[0];
         _brands.forEach(function(b) {
-            var _cardHtml = N.Page.Util.getCard(b.id, b.name, b.logo);
-            _grid.append(_cardHtml);
+            var _cardHtml = N.Page.Block.Card(b.id, b.name, b.logo);
+            // _grid.append(_cardHtml);
             $(_parentContainerId).on("click", '[name="' + b.id + '"]', function() {
                 $(_containerIds.Color).addClass("uk-hidden");
                 $(_containerIds.Brand).addClass("uk-hidden");
