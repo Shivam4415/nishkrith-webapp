@@ -26,23 +26,23 @@ N.Page.Home = new (function () {
           "</a>"
       );
     }
-
     brand().done(function (brands) {
       N.Page.Brand.init(brands);
       // set cookies header;
     });
     _initModal();
-    N.Page.LoginOffCanvas.init();
-    N.Page.Supplier.init();
-  
+  N.Page.Supplier.init();
+
+    // N.Page.LoginOffCanvas.init();
   };
+
+
 
   const _initModal = function () {
     $(Ids.HomePageButtonLogIn).on("click", openLoginModal);
     $(Ids.HomePageButtonSignUp).on("click", openSignUpModal);
     $(Ids.LoginPageButtonSignUp).on("click", openSignUpModal);
     $(Ids.SupplierModal).on("click", supplier);
-
   };
 
   const openLoginModal = () => {

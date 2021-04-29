@@ -1,28 +1,18 @@
-// function redirect(){
-//     var a=10;
-// window.location.replace("C:\Users\dipak\OneDrive\Desktop\nishkrith\nishkritih-webapp\views\partials\supplierModal.html");
-// console.log(a);
-// }
-N.Page.Supplier = (function () {
-  const Ed = {
-    // SupplierModal: "#redirect",
+
+N.Page.Supplier =new (function () {
+ var Ed = {
     Addbtn: "#databtn",
   };
-  const init = () => {
-    // $(Ed.SupplierModal).on("click", redirec);
+ var init=function(){
     $(Ed.Addbtn).on("click", addData);
-  };
-//   const redirec = () => {
-//     window.location.redirects("www.youtube.com");
-//   };
-  const addData = () => {
-    const Supplier = document.getElementById("usupplier").value;
-    const Address = document.getElementById("raddress").value;
-    const Phone = document.getElementById("rphone").value;
-    const Services = document.getElementById("rservices").value;
+ var addData = () => {
+   var Supplier = document.getElementById("usupplier").value;
+   var Address = document.getElementById("raddress").value;
+   var Phone = document.getElementById("rphone").value;
+   var Services = document.getElementById("rservices").value;
     append(Supplier, Address, Phone, Services);
   };
-  const append = (Supplier, Address, Phone, Services) => {
+ var append = (Supplier, Address, Phone, Services) => {
     var row =
       '<tr><td class="uk-width-1-5 uk-text-center">' +
       Supplier +
@@ -34,11 +24,12 @@ N.Page.Supplier = (function () {
       Services +
       "</td></tr>";
   };
-
+ };
   return {
     init: init,
-  };
+};
 })();
 // window.onload = function () {
 //   N.Page.Supplier.init();
 // };
+
