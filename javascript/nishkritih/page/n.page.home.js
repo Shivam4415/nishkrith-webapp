@@ -53,7 +53,7 @@ N.Page.Home = new (function () {
     UIkit.modal(Ids.RegisterModal).show();
   };
   const supplier = () => {
-    window.location.redirect("views\partials\supplier.html");
+    window.location.redirect("/oxygensupplier");
   };
 
   function brand() {

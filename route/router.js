@@ -12,8 +12,8 @@ router.get("/home", (req, res) => {
 router.get("/dashboard", (req, res) => {
   res.render("dashboard", {text: "This is text"});
 });
-router.get("/OxygenSupplier", (req, res) => {
-  res.redirect("OxygenSupplier");
+router.get("/oxygensupplier", (req, res) => {
+  res.render("supplierModal");
 });
 
 // router.route('/signup')
