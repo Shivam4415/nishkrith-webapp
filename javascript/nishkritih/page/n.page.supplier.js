@@ -6,7 +6,7 @@
 N.Page.Supplier = (function () {
   const Ed = {
     // SupplierModal: "#redirect",
-    Addbtn: "#btnAddUp",
+    Addbtn: "#databtn",
   };
   const init = () => {
     // $(Ed.SupplierModal).on("click", redirec);

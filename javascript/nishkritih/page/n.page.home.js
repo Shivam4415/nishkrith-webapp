@@ -18,7 +18,7 @@ N.Page.Home = new (function () {
         '<a class="uk-padding-remove" name="' +
           i +
           '">' +
-          '<div class="uk-card  uk-margin-bottom uk-margin-top uk-animate uk-card-body uk-margin-left uk-width-small@s">' +
+          '<div class="uk-card uk-margin-bottom uk-margin-top uk-animate uk-card-body uk-margin-left uk-width-small@s">' +
           '<img src="" id="' +
           i +
           '">' +
