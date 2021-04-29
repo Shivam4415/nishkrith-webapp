@@ -6,11 +6,10 @@ N.Page.Supplier = new (function () {
   var init = function () {
     $(Ed.Addbtn).on("click", supplermodal);
     $(Ed.btnAddUp).on("click", addData);
-
+  };
     var supplermodal = () => {
       UIkit.modal(Ed.suppliermodel).show();
     };
-
     var addData = () => {
       var Supplier = document.getElementById("usupplier").value;
       var Address = document.getElementById("raddress").value;
@@ -30,7 +29,7 @@ N.Page.Supplier = new (function () {
         Services +
         "</td></tr>";
     };
-  };
+
   return {
     init: init,
   };
