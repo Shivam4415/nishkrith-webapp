@@ -38,6 +38,7 @@
     isNullUndefinedOrEmpty: function (x) {
       return x === null || x === undefined || !x.length;
     },
+    totalBrands: 16,
   };
 
   N.isNullOrUndefined = N.Util.isNullOrUndefined;
@@ -559,6 +560,7 @@
   N.isFirstSubmit = N.Validators.isFirstSubmit;
   N.apiUrl = N.Urls.apiUrl;
   N.localApiUrl = N.Urls.localApiUrl;
+  N.totalBrands = N.Util.totalBrands;
 
   N.Modal = {};
 
