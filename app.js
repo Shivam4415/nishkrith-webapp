@@ -13,8 +13,6 @@ app.use(express.static("img"));
 app.use(express.static("javascript"));
 app.use(express.static("javascript/nishkritih/page"));
 app.use(express.static("javascript/nishkritih/control"));
-
-
 // Set Views
 app.set("views", "./views/pages");
 app.set("view engine", "ejs");

@@ -55,15 +55,15 @@ N.Page.Color = new (function () {
           TotalAmount: "5198",
           Container: "#PriceSummary",
         };
-        N.Control.FinalProduct(_productObject);
-        N.Control.Accessories(_accessoriesObject);
-        N.Control.PriceSummary(_priceSummary);
+        // N.Control.FinalProduct(_productObject);
+        // N.Control.Accessories(_accessoriesObject);
+        // N.Control.PriceSummary(_priceSummary);
         //N.Page.Home.openSignUpModal();
       });
     });
   };
 
-  return {
-    init: init,
-  };
+    return {
+        init: init,
+    };
 })();
