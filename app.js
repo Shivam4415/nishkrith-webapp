@@ -2,8 +2,8 @@ const express = require("express");
 const cookieParser = require("cookie-parser");
 //const { config } = require("node:process");
 const app = express();
-const port = process.env.PORT || 5050;
 const router = require("./route/router");
+const config = require("./config");
 
 app.use(express.static("jquery"));
 app.use(express.static("uikit"));
@@ -24,6 +24,6 @@ app.engine("html", require("ejs").renderFile);
 app.use("/", router);
 
 // Listen on port 3000
-app.listen(port, () => {
-  console.log(`Listening on port  ${port}`);
+app.listen(config.server.port, () => {
+  console.log(`Listening on port  ${config.server.port}`);
 });

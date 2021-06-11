@@ -1,7 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const jwt = require("jsonwebtoken");
-
+const crypto = require('crypto');
+const config = require("../config");
+let refreshTokens = [];
 
 router.get("/", (req, res) => {
   res.redirect("home");
@@ -32,15 +34,15 @@ router.post("/verifyToken", (req, res) => {
   }
   let data = `${phone}.${otp}.${expires}`;
   let newCalculatedHash = crypto
-    .createHmac("sha256", smsKey)
+    .createHmac("sha256", config.server.smsSecretKey)
     .update(data)
     .digest("hex");
   if (newCalculatedHash === hashValue) {
     console.log("user confirmed");
-    const accessToken = jwt.sign({ data: phone }, JWT_AUTH_TOKEN, {
+    const accessToken = jwt.sign({ data: phone }, config.server.jwtAuthToken, {
       expiresIn: "30s",
     });
-    const refreshToken = jwt.sign({ data: phone }, JWT_REFRESH_TOKEN, {
+    const refreshToken = jwt.sign({ data: phone }, config.server.jwtRefreshToken, {
       expiresIn: "1y",
     });
     refreshTokens.push(refreshToken);
@@ -73,7 +75,7 @@ router.post("/verifyToken", (req, res) => {
 
 async function authenticateUser(req, res, next) {
   const accessToken = req.cookies.accessToken;
-  jwt.verify(accessToken, JWT_AUTH_TOKEN, async (err, phone) => {
+  jwt.verify(accessToken, config.server.jwtAuthToken, async (err, phone) => {
     if (phone) {
       req.phone = phone;
       next();
@@ -99,9 +101,9 @@ router.post("/refresh", (req, res) => {
       .status(403)
       .send({ message: "Refresh token blocked, login again" });
 
-  jwt.verify(refreshToken, JWT_REFRESH_TOKEN, (err, phone) => {
+  jwt.verify(refreshToken, config.server.jwtRefreshToken, (err, phone) => {
     if (!err) {
-      const accessToken = jwt.sign({ data: phone }, JWT_AUTH_TOKEN, {
+      const accessToken = jwt.sign({ data: phone }, config.server.jwtAuthToken, {
         expiresIn: "30s",
       });
       return res

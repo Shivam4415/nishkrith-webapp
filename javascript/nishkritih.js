@@ -557,7 +557,7 @@
   N.Validators.reset = N.Validators.reset;
   N.Validators.attachValidator = N.Validators.attachValidator;
   N.isFirstSubmit = N.Validators.isFirstSubmit;
-  N.apiUrl = N.Urls.apiUrl;
+  N.apiUrl = N.Urls.localApiUrl;
   N.localApiUrl = N.Urls.localApiUrl;
 
   N.Modal = {};
